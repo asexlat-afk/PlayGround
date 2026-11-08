@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff6f5">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='13' fill='%23ffe5ec'/%3E%3Ctext x='20' y='29' text-anchor='middle' font-size='29' fill='%23e884a4'%3E%E2%9C%BF%3C/text%3E%3C/svg%3E">
+  <title>Softie Studio — Crea tu chibi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Softie Studio inicio">
+        <span class="brand-mark">✿</span><span>softie<span class="brand-light"> studio</span></span>
+      </a>
+      <div class="top-note"><span class="sparkle">✦</span> un rinconcito para crear <span class="sparkle">✦</span></div>
+      <button class="icon-button sound-button" id="soundBtn" aria-label="Activar sonido" title="Sonido"><span>♫</span></button>
+    </header>
+
+    <main class="studio">
+      <section class="preview-column" aria-label="Vista previa del personaje">
+        <div class="preview-heading"><div><span class="eyebrow">TU PERSONAJE</span><h1>¡Hola, <span id="helloName">Luna</span>! <span class="wave">✧</span></h1></div><button class="round-button" id="randomBtn" title="Crear look aleatorio" aria-label="Crear look aleatorio">⤨</button></div>
+        <div class="stage" id="stage">
+          <div class="stage-sticker sticker-left">✿</div><div class="stage-sticker sticker-right">♡</div>
+          <div class="stage-caption"><span class="caption-dot"></span> MI AVATAR <span class="caption-dot"></span></div>
+          <div class="avatar-wrap"><svg id="avatar" viewBox="0 0 360 500" role="img" aria-label="Vista de tu personaje chibi"></svg></div>
+          <div class="stage-floor"></div>
+          <div class="mood-tag"><span>☁</span> soft mood</div>
+        </div>
+        <div class="name-card"><div class="name-icon">♡</div><label for="nameInput"><span class="mini-label">NOMBRE DE TU CHIBI</span><input id="nameInput" maxlength="14" value="Luna" autocomplete="off"></label><span class="edit-hint">✎</span></div>
+        <div class="preview-actions"><button class="primary-button" id="saveBtn"><span>♡</span> Guardar look</button><button class="secondary-button" id="downloadBtn"><span>↓</span> Descargar</button></div>
+      </section>
+
+      <section class="wardrobe" aria-label="Armario">
+        <div class="wardrobe-head"><div><span class="eyebrow">EL ARMARIO</span><h2>Arma tu look <span class="tiny-star">✦</span></h2></div><span class="item-count" id="itemCount">01 / 09</span></div>
+        <div class="category-tabs" id="categoryTabs" role="tablist" aria-label="Categorías de ropa"></div>
+        <div class="category-title"><div><span class="category-emoji" id="categoryEmoji">✧</span><h3 id="categoryName">Cabello de atrás</h3></div><span class="options-count" id="optionsCount">6 estilos</span></div>
+        <div class="item-grid" id="itemGrid" aria-live="polite"></div>
+        <div class="color-panel">
+          <div class="color-heading"><div><span class="eyebrow">TOQUE DE COLOR</span><h3>Cambia el tono</h3></div><button class="color-reset" id="colorReset" title="Restaurar color original">↺ <span>Original</span></button></div>
+          <div class="swatches" id="swatches" aria-label="Colores disponibles"></div>
+          <div class="custom-color-row"><label class="custom-color-label" for="customColor"><span class="custom-color-dot">◉</span> Tu color favorito</label><input id="customColor" type="color" value="#d5a5ec" aria-label="Elegir color personalizado"></div>
+          <p class="color-tip"><span>✦</span> Elige una prenda y dale tu toque mágico</p>
+        </div>
+        <div class="closet-strip"><div class="closet-copy"><span class="closet-icon">▣</span><div><strong>Mis looks</strong><small id="savedCount">Tus creaciones favoritas</small></div></div><div class="saved-looks" id="savedLooks"></div></div>
+      </section>
+    </main>
+    <footer><span>Hecho con <b>♡</b> y un poquito de magia</span><span class="footer-right">SOFTIE STUDIO <i>✦</i> CREA A TU MANERA</span></footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="game.js"></script>
+</body>
+</html>
